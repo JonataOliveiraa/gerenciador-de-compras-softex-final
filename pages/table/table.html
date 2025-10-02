@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Criar Produto | Gerenciador de Produtos</title>
+</head>
+<body>  
+    <!-- Editar produto pop up
+    <div class="flex fixed inset-0 items-center justify-center bg-black/30" id="category-popup">
+        <div class="relative flex flex-col gap-4 bg-white p-3 mx-2 border rounded-xl z-10">
+            <button class="absolute flex items-center justify-center w-6 h-6 top-2 right-2 text-white bg-red-500 rounded-full hover:bg-red-600 cursor-pointer" id="category-popup-close"><i class="ri-close-line"></i></button>
+            <div>
+                <h1 class="text-xl font-bold">Editar Produto</h1>
+        </div>
+            <div class="flex flex-wrap gap-2 mx-5 justify-between">   
+                <div>
+                    <label for="create-product-name">Nome:</label>
+                    <input type="text" id="create-product-name" name="create-product-name" placeholder="Produto..." class="border px-1">
+                    
+                    <label for="create-product-value">R$</label>
+                    <input type="number" id="create-product-value" name="create-product-value" min="0" max="10000" placeholder="2" class="border w-20 px-1 text-center">
+                </div>
+                <div class="flex">
+                    <label for="create-select-category">Categoria:</label>
+                    <select name="create-select-category" id="create-select-category" class="border px-1 ml-1">
+                        <option value="void">Vazio</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap gap-2 mx-5 justify-between">
+                <div>
+                    <label for="create-product-origin">Origem:</label>
+                    <input type="text" id="create-product-origin" name="create-product-name" placeholder="Comida, Ferramenta..." class="border px-1">
+                </div>
+                    
+                <div>
+                    <label for="create-product-lote">Nº de Lote:</label>
+                    <input type="text" id="create-product-batch" name="create-product-batch" placeholder="Lote 2025-01A" class="border px-1">
+                </div>
+            </div>
+
+            <div class="flex gap-2 mx-5">
+                <label for="create-product-lote">Data:</label>
+                <input type="date" id="create-product-date" class="border">
+            </div>
+            <span class="text-red-400 text-center invisible" id="text-error">Preencha todos os campos!</span>
+            <button class="w-full mt-auto px-1 rounded-sm bg-yellow-300 cursor-pointer hover:bg-yellow-400 border" id="create-product-button">Criar</button>
+        </div>
+    </div> -->
+    <div class="
+    h-screen
+    w-screen    
+    grid grid-cols-[1fr_1fr] grid-rows-[auto_1fr_1fr_auto]">
+        <header class="
+        z-1
+        bg-yellow-300 p-4
+        flex justify-between
+        col-span-2 row-span-1">
+            <h1 class="text-xl font-semibold">Softex | Tabela</h1>
+            <ul class="flex gap-2">
+                <li>
+                    <a class="hover:text-amber-800 hover:border-b" href="../../index.html">Menu</a>
+                </li>
+                <li>
+                    <a class="hover:text-amber-800 hover:border-b" href="../create/create.html">Criar</a>
+                </li>
+                <li>
+                    <a class="hover:text-amber-800 hover:border-b" href="table.html">Tabela</a>
+                </li>
+            </ul>
+        </header>
+        <main class="
+        overflow-auto
+        col-span-2 row-span-2">
+            <section class="p-3 flex flex-col gap-4 w-full">
+                <h1 class="text-2xl font-semibold">Tabela</h1>
+                
+                <div>
+                    <div class="flex justify-between flex-wrap border border-b-0 p-2">
+                        <div class="flex gap-x-2">
+                            <div class="flex">
+                                <button class="px-1 bg-yellow-300 cursor-pointer hover:bg-yellow-400 rounded-l border border-r-0" id="sort-table">Ordenar</button>
+                                <select class="text-center border" id="product-sort-type" name="product-sort-type">
+                                    <option value="name">A-Z</option>
+                                    <option value="value">R$100 - R$ 1</option>
+                                    <option value="date">Mais recente</option>
+                                </select>
+                            </div>
+                            <div class="flex">
+                                <button class="px-1 bg-yellow-300 cursor-pointer hover:bg-yellow-400 rounded-l border border-r-0">Filtrar</button>
+                                <select class="text-center border" id="product-info-type" name="product-info-type" >
+                                    <option value="" disabled selected class="hidden">Selecione</option>
+                                    <option value="value">R$</option>
+                                    <option value="category">Categoria</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <label for="product-info-type">Pesquisar por:</label>
+                            
+                            <div class="flex">
+                                <select class="text-center border border-r-0"  id="product-search-info-type" name="product-search-info-type">
+                                    <option value="0">Nome</option>
+                                    <option value="1">R$</option>
+                                    <option value="2">Categoria</option>
+                                    <option value="3">Origem</option>
+                                    <option value="4">Lote</option>
+                                    <option value="5">Data</option>
+                                </select>
+                                <input type="text" class="outline-0 px-1 border border-r-0" name="search-from" id="search-from-input">
+                                <button class="px-1 rounded-r-xl bg-yellow-300 cursor-pointer hover:bg-yellow-400 border" id="search-product-button">
+                                    <i class="ri-search-line"></i>
+                                </button>    
+                            </div>
+                        </div>
+                    </div>
+                    <table class="w-full h-full border-collapse text-center">
+                        <thead class="bg-yellow-300">
+                            <tr class="border">
+                                <th class="border w-[7.5%]">Ações</th>
+                                <th class="border w-[20%]">Nome</th>
+                                <th class="border w-[5%]">R$</th>
+                                <th class="border w-[10%]">Categoria</th>
+                                <th class="border w-[10%]">Origem</th>
+                                <th class="border w-[10%]">Lote</th>
+                                <th class="border w-[10%]">DD/MM/YYYY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border">1</td>
+                                <td class="border">
+                                    <button>Editar</button>
+                                    <button>Remover</button>
+                                </td>
+                                <td class="border">Creme</td>
+                                <td class="border">100</td>
+                                <td class="border">Limpeza</td>
+                                <td class="border">Empresa</td>
+                                <td class="border">ABA-21312</td>
+                                <td class="border">11/11/1111</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        <footer class="
+        bg-yellow-300 p-4 text-center text-sm
+        col-span-2 row-span-1">
+            <p>Softex Pernambuco &copy; Todoso os direitos reservados - 2025</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
