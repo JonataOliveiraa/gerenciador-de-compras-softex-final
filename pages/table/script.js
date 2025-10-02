@@ -94,7 +94,7 @@ function updateTable() {
 
                     <div class="flex gap-2 mx-5">
                         <label for="create-product-lote">Data:</label>
-                        <input type="date" id="create-product-date" value="${date.textContent}" class="border">
+                        <input type="date" id="create-product-date" value="${date.textContent.split("/").reverse().join('-')}" class="border">
                     </div>
                     <span class="text-red-400 text-center invisible" id="text-error">Preencha todos os campos!</span>
                     <div class="flex w-full mt-auto gap-1">
