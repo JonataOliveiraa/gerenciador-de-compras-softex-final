@@ -146,7 +146,7 @@ categoryCreateButton.addEventListener('click', e => {
     categoryCreatorContainer.reset()
 })
 
-categoryPopUpCloseButton.addEventListener('click', () => {
+categoryPopUpCloseButton.addEventListener('click', e => {
     e.preventDefault()
 
     categoryPopUpContainer.classList.toggle('hidden')
